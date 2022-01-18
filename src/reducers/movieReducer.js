@@ -3,14 +3,19 @@ import movies from './../data.js';
 
 const initialState = {
     movies: movies,
-    appTitle: "IMDB Movie Database"
-}
+    appTitle: "Kim's Movie Database"
+};
 
-const reducer = (state, action) => {
+const reducer = (state = initialState, action) => {
     switch(action.type) {
         case DELETE_MOVIE:
             return {
+                ...state,
                 movies: state.movies.filter(item=>(action.payload !== item.id))
+            }
+        case ADD_MOVIE:
+            return {
+
             }
         default:
             return state;
