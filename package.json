@@ -37,6 +37,7 @@
     "cors": "2.8.5",
     "css-loader": "^6.5.1",
     "express": "4.17.1",
+    "fkill": "^8.0.0",
     "jest-dom": "4.0.0",
     "moment": "2.29.1",
     "mutationobserver-shim": "0.3.7",
