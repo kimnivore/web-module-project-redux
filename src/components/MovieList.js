@@ -21,7 +21,7 @@ const MovieList = (props) => {
 
                 <tbody>
                     {
-                        props.movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
+                        movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
                     }
                 </tbody>
             </table>
@@ -33,7 +33,7 @@ const MovieList = (props) => {
 
 const mapStateToProps = (state) => {
     return ({
-        movies: state.movies
+        movies: state.movie.movies
     });
 }
 
