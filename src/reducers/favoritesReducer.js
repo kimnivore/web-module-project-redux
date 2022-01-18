@@ -1,15 +1,27 @@
+import { TOGGLE_FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE } from './../actions/favoritesActions';
+
 const initialState = {
-    favorites: [{title: "Kim's movie", id: 1}, {title: "Keane's movie", id: 2}],
+    favorites: [],
     displayFavorites: true
 };
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        // case:
-        //     return {
-
-        //     }
-
+        case TOGGLE_FAVORITES:
+            return {
+                ...state,
+                displayFavorites: !state.displayFavorites
+            };
+        case ADD_FAVORITE:
+            return {
+                ...state,
+                favorites: [...state.favorites, action.payload]
+            }
+         case REMOVE_FAVORITE:
+            return {
+                ...state,
+                favorites: state.favorites.filter(item => (item.id !== action.payload))
+            }
         default:
             return state;
     }
